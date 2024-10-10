@@ -1,0 +1,75 @@
+Program
+#include<iostream>
+using namespace std;
+class stack
+{
+int a[10];
+int top;
+public:
+stack()
+{
+top=0;
+}
+void push()
+{
+if(top==10)
+{
+cout<<"stack is full \n";
+return;
+}
+else
+{
+top=top+1;
+cout<<"\n enter the element to insert:";
+cin>>a[top];
+}
+}
+void pop()
+{
+if(top==0)
+{
+cout<<"\n stack is empty";
+return;
+}
+else
+{
+cout<<"\n the deleted element is:"<<a[top];
+top=top-1;
+}
+}
+void display()
+{
+int i;
+if(top==0)
+{
+cout<<"\n stack is empty";
+return;
+}
+else
+{
+cout<<"\n stack element are: \n";
+for(i=top;i>=1;i--)
+cout<<"\n"<<a[i];
+}
+}
+};
+int main()
+{
+stack ob;
+int ch;
+do
+{
+cout<<"\n 1.push \n 2.pop \n 3.display \n 4.exit \n ";
+cout<<"\n enter your choice:";
+cin>>ch;
+switch(ch)
+{
+case 1:ob.push();
+break;
+case 2:ob.pop();
+break;
+case 3:ob.display();
+break;
+}
+}while(ch!=4);
+}
